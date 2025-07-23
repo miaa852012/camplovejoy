@@ -1,51 +1,63 @@
+/* Base Styles */
 body {
   margin: 0;
-  font-family: sans-serif;
-  background: #111;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #0e0e0e;
+  color: #f0f0f0;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
 }
 
+/* Slider Container */
 .slider {
   position: relative;
   width: 90%;
   max-width: 800px;
   overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  background: #1a1a1a;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
 }
 
+/* Slide Track */
 .slides {
   display: flex;
   transition: transform 0.5s ease-in-out;
   width: 100%;
 }
 
+/* Each Image */
 .slides img {
   width: 100%;
   flex-shrink: 0;
   border-radius: 12px;
+  filter: brightness(95%);
+  background: #000;
 }
 
+/* Navigation Buttons */
 .prev, .next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  color: white;
-  border: none;
-  font-size: 2rem;
-  padding: 0 15px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 2.2rem;
+  padding: 8px 16px;
   cursor: pointer;
+  border-radius: 8px;
   z-index: 1;
   user-select: none;
+  transition: background 0.2s, transform 0.2s;
 }
-
-.prev { left: 10px; }
-.next { right: 10px; }
 
 .prev:hover, .next:hover {
-  background: rgba(0,0,0,0.8);
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-50%) scale(1.05);
 }
+
+.prev { left: 16px; }
+.next { right: 16px; }
